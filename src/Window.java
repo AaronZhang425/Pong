@@ -2,19 +2,24 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Window extends JFrame{
-    private Dimension size;
+    private Dimension screenSize;
 
     public Window() {
-        size = Toolkit.getDefaultToolkit().getScreenSize();
+        screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
         setTitle("Pong Game");
-        setSize(size);
+        setSize(screenSize);
+        setSize(screenSize.width, screenSize.height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
         setIconImage(new ImageIcon("res/pongIcon.png").getImage());
 
         getContentPane().setBackground(Color.black);
+    }
+
+    public Dimension getScreenSize() {
+        return screenSize;
     }
 
 }
